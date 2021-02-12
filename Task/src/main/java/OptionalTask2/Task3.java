@@ -2,9 +2,8 @@ package OptionalTask2;
 
 import java.util.Scanner;
 
-public class Task3 {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+public class Task3 extends Scann {
+    public void main() {
         System.out.println("Enter length Array");
         int n = in.nextInt();
         System.out.println("enter the interval M");
@@ -40,5 +39,9 @@ public class Task3 {
         System.out.println("Sum= " + sum);
         in.close();
     }
-}
 
+
+    public static void main(String[] args) {
+        new Task3().main();
+    }
+}

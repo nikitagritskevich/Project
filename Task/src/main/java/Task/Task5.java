@@ -3,9 +3,8 @@ package Task;
 
 import java.util.Scanner;
 
-public class Task5 {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+public class Task5 extends Scann {
+    public void main(){
         String month[] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
                 "November", "December"};
         System.out.print("Enter the month number: ");
@@ -16,5 +15,9 @@ public class Task5 {
             System.out.println("There is no such month");
         }
         in.close();
+
     }
+    public static void main(String[] args) {
+        new Task5().main();
+        }
 }

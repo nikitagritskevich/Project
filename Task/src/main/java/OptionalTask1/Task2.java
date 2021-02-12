@@ -4,9 +4,8 @@ package OptionalTask1;
 import java.util.Scanner;
 
 
-public class Task2 {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+public class Task2 extends Scann {
+    public void main() {
         System.out.println("Enter n");
         int n = in.nextInt();
         String[] Array = new String[n];
@@ -39,5 +38,10 @@ public class Task2 {
         for (String elem : Array) {
             System.out.print(elem + " ");
         }
+    }
+
+
+    public static void main(String[] args) {
+        new Task2().main();
     }
 }

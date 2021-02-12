@@ -3,9 +3,8 @@ package Task;
 
 import java.util.Scanner;
 
-public class Task3 {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+public class Task3 extends Scann {
+    public void main() {
         System.out.println("Enter quantity numbers");
         int numbers = in.nextInt();
         int Array[] = new int[numbers];
@@ -22,5 +21,9 @@ public class Task3 {
         }
         in.close();
 
+    }
+
+    public static void main(String[] args) {
+        new Task3().main();
     }
 }

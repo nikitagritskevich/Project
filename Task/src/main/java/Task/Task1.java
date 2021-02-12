@@ -3,9 +3,8 @@ package Task;
 
 import java.util.Scanner;
 
-public class Task1 {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+public class Task1 extends Scann {
+    public void main() {
         String name;
         if (in.hasNextInt() || in.hasNextDouble()) {
             System.out.println("Is not name");
@@ -16,5 +15,9 @@ public class Task1 {
         }
         in.close();
 
+    }
+
+    public static void main(String[] args) {
+        new Task1().main();
     }
 }
