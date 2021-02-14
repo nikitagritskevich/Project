@@ -4,11 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>Task</groupId>
-  <artifactId>Task</artifactId>
+  <groupId>JavaFundamentals.OptionalTask1.Task</groupId>
+  <artifactId>JavaFundamentals.OptionalTask1.Task</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>OptionalTask1.Scann</name>
+  <name>JavaFundamentals.OptionalTask1.OptionalTask1.Scann</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
