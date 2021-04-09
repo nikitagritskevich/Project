@@ -29,6 +29,7 @@ public class Task5 extends Scann {
             }
 
             for (int j = 0; j < Numbers.length; j++) {
+
                 if ((Numbers[j] % 2) == 0) {
                     evenNumber++;
                 } else {

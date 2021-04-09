@@ -20,6 +20,7 @@ public class Task2 extends Scann {
                 }
             }
         }
+
         for (String elem : Array) {
             System.out.print(elem + " ");
         }
