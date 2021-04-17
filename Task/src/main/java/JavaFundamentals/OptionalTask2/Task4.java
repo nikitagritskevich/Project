@@ -8,10 +8,11 @@ import java.util.Scanner;
 //4.     Найти максимальный элемент в матрице и удалить из матрицы все строки и столбцы, его содержащие
 
 
-public class Task4 extends Scann {
+public class Task4 {
 
-    public void main(){
 
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
         System.out.println("Enter length Array");
         int n = in.nextInt();
         System.out.println("enter the interval M");
@@ -71,11 +72,6 @@ public class Task4 extends Scann {
 
         }
 
-    }
-
-
-    public static void main(String[] args) {
-        new Task4().main();
     }
 
 

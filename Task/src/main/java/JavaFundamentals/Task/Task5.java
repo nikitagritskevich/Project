@@ -1,8 +1,12 @@
 package JavaFundamentals.Task;
 //5.   Ввести число от 1 до 12. Вывести на консоль название месяца, соответствующего данному числу. Осуществить проверку корректности ввода чисел.
 
-public class Task5 extends Scann {
-    public void main(){
+import java.util.Scanner;
+
+public class Task5 {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
         String month[] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
                 "November", "December"};
         System.out.print("Enter the month number: ");
@@ -15,7 +19,4 @@ public class Task5 extends Scann {
         in.close();
 
     }
-    public static void main(String[] args) {
-        new Task5().main();
-        }
 }

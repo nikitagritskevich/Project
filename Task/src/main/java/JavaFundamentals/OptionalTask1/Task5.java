@@ -2,9 +2,12 @@ package JavaFundamentals.OptionalTask1;
 //5.     Найти количество чисел, содержащих только четные цифры, а среди оставшихся — количество чисел с равным числом четных и нечетных цифр.
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class Task5 extends Scann {
-    public void main() {
+public class Task5 {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int Array[] = new int[n];
         ArrayList<Integer> evenNumbers = new ArrayList<>();
@@ -54,11 +57,6 @@ public class Task5 extends Scann {
         for (int elem : oddNumbers) {
             System.out.print(elem + " ");
         }
-    }
-
-
-    public static void main(String[] args) {
-        new Task5().main();
     }
 }
 

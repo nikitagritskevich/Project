@@ -1,8 +1,13 @@
 package JavaFundamentals.OptionalTask1;
 //1.     Найти самое короткое и самое длинное число. Вывести найденные числа и их длину.
 
-public class Task1 extends Scann {
-    public void main() {
+import java.util.Scanner;
+
+public class Task1 {
+
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         System.out.println("Enter n");
         String string[] = new String[n];
@@ -28,10 +33,5 @@ public class Task1 extends Scann {
         System.out.println("Max number= " + maxStr + ", and their length is= " + max);
         System.out.println("Min number= " + minStr + ", and their length is= " + min);
         in.close();
-    }
-
-
-    public static void main(String[] args) {
-        new Task1().main();
     }
 }
