@@ -17,55 +17,57 @@ public class Task4 {
         int n = in.nextInt();
         System.out.println("enter the interval M");
         int M = in.nextInt();
-        double Array[][] = new double[n][n];
+        int Array[][] = new int[n][n];
         for (int i = 0; i < Array.length; i++) {
-            for (int j = 0; j < Array.length; j++) {
-                Array[i][j] = (int) (0 + (Math.random()) * 10);
+            for (int j = 0; j < Array[i].length; j++) {
+                Array[i][j] = (int) (-M + (Math.random()) * M);
 
             }
         }
 
 
-        for (double[] array : Array) {
-            for (double elem : array) {
+        for (int[] array : Array) {
+            for (int elem : array) {
                 System.out.print(elem + " ");
             }
             System.out.println();
         }
         System.out.println();
-        double maxNumber = Double.NEGATIVE_INFINITY;
+        int maxNumber = Array[0][0];
 
-        int line = 0;
-        int row = 0;
+        ArrayList<Integer> line = new ArrayList<>();
+        ArrayList<Integer> row = new ArrayList<>();
         for (int i = 0; i < Array.length; i++) {
-            for (int j = 0; j < Array.length; j++) {
+            for (int j = 0; j < Array[i].length; j++) {
                 if (Array[i][j] > maxNumber) {
                     maxNumber = Array[i][j];
-                    line = i;
-                    row = j;
-
                 }
             }
         }
-        for (int i = line; i < Array.length - 1; i++) {
-            for (int j = 0; j < Array.length; j++) {
-                Array[i][j] = Array[i + 1][j];
-            }
-        }
+
+        System.out.println("Max Number is : " + maxNumber);
+
         for (int i = 0; i < Array.length; i++) {
-            for (int j = row; j < Array.length - 1; j++) {
-                Array[i][j] = Array[i][j + 1];
+            for (int j = 0; j < Array[i].length; j++) {
+                if (Array[i][j] == maxNumber) {
+                    line.add(i);
+                    row.add(j);
+                }
             }
         }
 
-        double[][] finalArray = new double[n - 1][n - 1];
-        for (int i = 0; i < finalArray.length; i++) {
-            for (int j = 0; j < finalArray.length; j++) {
-                finalArray[i][j] = Array[i][j];
+
+        for (int i = 0; i < Array.length; i++) {
+            for (int j = 0; j < Array[i].length; j++) {
+                if (line.contains(i) == true || row.contains(j) == true) {
+                    Array[i][j] = 0;
+                }
             }
         }
-        for (double[] array : finalArray) {
-            for (double elem : array) {
+
+        System.out.println("Final Matrix : ");
+        for (int[] array : Array) {
+            for (int elem : array) {
                 System.out.print(elem + " ");
             }
             System.out.println();
