@@ -14,61 +14,36 @@ c) список автомобилей заданного года выпуск�
 
 public class Car {
 
-    private int id;
-    private BrandAuto brandAuto;
-    private int modelAuto;
-    private int yearOfRelease;
-    private String color;
-    private double price;
-    private int regNumber;
+    private final int id;
+    private final BrandAuto brandAuto;
+    private final int modelAuto;
+    private final int yearOfRelease;
+    private final String color;
+    private final double price;
+    private final int regNumber;
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-
     public int getModelAuto() {
         return modelAuto;
-    }
-
-    public void setModelAuto(int modelAuto) {
-        this.modelAuto = modelAuto;
     }
 
     public int getYearOfRelease() {
         return yearOfRelease;
     }
 
-    public void setYearOfRelease(int yearOfRelease) {
-        this.yearOfRelease = yearOfRelease;
-    }
-
     public String getColor() {
         return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public int getRegNumber() {
         return regNumber;
-    }
-
-    public void setRegNumber(int regNumber) {
-        this.regNumber = regNumber;
     }
 
     public Car(int id, BrandAuto brandAuto, int modelAuto, int yearOfRelease, String color, double price, int regNumber) {
@@ -96,9 +71,5 @@ public class Car {
 
     public BrandAuto getBrandAuto() {
         return brandAuto;
-    }
-
-    public void setBrandAuto(BrandAuto brandAuto) {
-        this.brandAuto = brandAuto;
     }
 }
