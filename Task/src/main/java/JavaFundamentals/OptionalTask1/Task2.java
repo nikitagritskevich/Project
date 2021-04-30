@@ -8,37 +8,37 @@ public class Task2 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter n");
-        int n = in.nextInt();
-        String[] Array = new String[n];
-        for (int i = 0; i < Array.length; i++) {
+        System.out.println("Enter length");
+        int length = in.nextInt();
+        String[] array = new String[length];
+        for (int i = 0; i < array.length; i++) {
             System.out.println("Enter the numbers :");
-            Array[i] = in.next();
+            array[i] = in.next();
         }
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = (n - 1); j > i; j--) {
-                if (Array[j - 1].length() > Array[j].length()) {
-                    String temp = Array[j - 1];
-                    Array[j - 1] = Array[j];
-                    Array[j] = temp;
+        for (int i = 0; i < array.length  - 1; i++) {
+            for (int j = (array.length - 1); j > i; j--) {
+                if (array[j - 1].length() > array[j].length()) {
+                    String temp = array[j - 1];
+                    array[j - 1] = array[j];
+                    array[j] = temp;
                 }
             }
         }
 
-        for (String elem : Array) {
+        for (String elem : array) {
             System.out.print(elem + " ");
         }
         System.out.println();
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = (n - 1); j > i; j--) {
-                if (Array[j - 1].length() < Array[j].length()) {
-                    String temp = Array[j - 1];
-                    Array[j - 1] = Array[j];
-                    Array[j] = temp;
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = (array.length - 1); j > i; j--) {
+                if (array[j - 1].length() < array[j].length()) {
+                    String temp = array[j - 1];
+                    array[j - 1] = array[j];
+                    array[j] = temp;
                 }
             }
         }
-        for (String elem : Array) {
+        for (String elem : array) {
             System.out.print(elem + " ");
         }
     }

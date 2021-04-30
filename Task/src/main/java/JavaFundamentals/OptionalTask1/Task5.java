@@ -8,22 +8,22 @@ public class Task5 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int Array[] = new int[n];
+        int length = in.nextInt();
+        int array[] = new int[length];
         ArrayList<Integer> evenNumbers = new ArrayList<>();
         ArrayList<Integer> oddNumbers = new ArrayList<>();
         int evenNumber = 0;
         int oddNumber = 0;
-        for (int i = 0; i < Array.length; i++) {
-            Array[i] = in.nextInt();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = in.nextInt();
         }
 
-        for (int i = 0; i < Array.length; i++) {
-            int length;
-            int temp = Array[i];
-            length = (int) Math.log10(temp) + 1;
-            int Numbers[] = new int[length];
-            int current = Array[i];
+        for (int i = 0; i < array.length; i++) {
+            int lengthNewArray;
+            int temp = array[i];
+            lengthNewArray = (int) Math.log10(temp) + 1;
+            int Numbers[] = new int[lengthNewArray];
+            int current = array[i];
             for (int j = 0; j < Numbers.length; j++) {
                 Numbers[j] = current % 10;
                 current /= 10;
@@ -40,10 +40,10 @@ public class Task5 {
                 }
             }
             if (Numbers.length == evenNumber) {
-                evenNumbers.add(Array[i]);
+                evenNumbers.add(array[i]);
             }
             if (Numbers.length == oddNumber) {
-                oddNumbers.add(Array[i]);
+                oddNumbers.add(array[i]);
             }
             oddNumber = 0;
             evenNumber = 0;

@@ -25,15 +25,15 @@ public class AutoPark {
     @Override
     public String toString() {
         return "AutoPark : " +
-                carList + "\n" +
+                carList +  +
                 '}';
     }
 
 
-    public void findCar(BrandAuto model, int n) {
+    public void findCar(BrandAuto model, int number) {
 
         carList.stream().
-                filter(car -> car.getBrandAuto() == model && car.getYearOfRelease() > n).
+                filter(car -> car.getBrandAuto() == model && car.getYearOfRelease() > number).
                 forEach(System.out::println);
 
     }

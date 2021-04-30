@@ -10,9 +10,9 @@ public class Task5 {
         String month[] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
                 "November", "December"};
         System.out.print("Enter the month number: ");
-        int monthNumbers = in.nextInt();
-        if (monthNumbers > 0 && monthNumbers < 13) {
-            System.out.println("Is :" + month[monthNumbers - 1]);
+        int monthNumber = in.nextInt();
+        if (monthNumber > 0 && monthNumber < 13) {
+            System.out.println("Is :" + month[monthNumber - 1]);
         } else {
             System.out.println("There is no such month");
         }

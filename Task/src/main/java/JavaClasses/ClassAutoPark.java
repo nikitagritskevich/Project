@@ -29,11 +29,11 @@ class ClassAutoPark {
         System.out.println("Enter required model Auto :");
         String model = in.next();
         System.out.println("Enter required year  : ");
-        int n = in.nextInt();
+        int requiredYear = in.nextInt();
 
 
         BrandAuto brandAuto = BrandAuto.valueOf(model.toUpperCase(Locale.ROOT).trim());
-        autoPark.findCar(brandAuto, n);
+        autoPark.findCar(brandAuto, requiredYear);
 
         System.out.println("Enter required  year of Release : ");
         int yearOfRelease = in.nextInt();

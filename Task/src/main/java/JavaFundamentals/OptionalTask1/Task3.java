@@ -8,9 +8,9 @@ public class Task3 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter n");
-        int n = in.nextInt();
+        int length = in.nextInt();
         int quantityNumber = 0;
-        String string[] = new String[n];
+        String string[] = new String[length];
         for (int i = 0; i < string.length; i++) {
             string[i] = in.next();
         }

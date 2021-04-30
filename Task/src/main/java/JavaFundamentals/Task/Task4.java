@@ -10,14 +10,14 @@ public class Task4 {
 
         Scanner in = new Scanner(System.in);
         System.out.println("End of the program the word <end>");
-        int sum = 0;
-        int product = 1;
+        int sumNumbers = 0;
+        int productNumbers = 1;
         while (in.hasNextInt()) {
             int number = in.nextInt();
-            sum += number;
-            product *= number;
-            System.out.println("sum= " + sum);
-            System.out.println("product= " + product);
+            sumNumbers += number;
+            productNumbers *= number;
+            System.out.println("sum= " + sumNumbers);
+            System.out.println("product= " + productNumbers);
         }
         in.close();
     }
