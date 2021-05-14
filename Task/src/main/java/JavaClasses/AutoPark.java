@@ -7,39 +7,39 @@ import java.util.stream.Collectors;
 
 public class AutoPark {
 
-    private List<Car> carList = new ArrayList<Car>();
+    private List<Car> park = new ArrayList<Car>();
 
 
     public List<Car> getCar() {
-        return carList;
+        return park;
     }
 
-    public void addCar(List<Car> carList) {
-        this.carList = carList;
+    public void addCar(List<Car> park) {
+        this.park = park;
     }
 
     public void addCar(Car car) {
-        this.carList.add(car);
+        this.park.add(car);
     }
 
     @Override
     public String toString() {
         return "AutoPark : " +
-                carList +  +
+                park +  +
                 '}';
     }
 
 
     public void findCar(BrandAuto model, int number) {
 
-        carList.stream().
+        park.stream().
                 filter(car -> car.getBrandAuto() == model && car.getYearOfRelease() > number).
                 forEach(System.out::println);
 
     }
 
     public void findYearOfRelease(int yearOfRelease, double price) {
-        List<Car> carArrayList = carList.stream().filter(car -> car.getYearOfRelease() == yearOfRelease && car.getPrice() > price)
+        List<Car> carArrayList = park.stream().filter(car -> car.getYearOfRelease() == yearOfRelease && car.getPrice() > price)
                 .collect(Collectors.toList());
         carArrayList.forEach(System.out::println);
         System.out.println();
