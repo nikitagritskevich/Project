@@ -38,7 +38,6 @@ public class Runner {
 
         Scanner in = new Scanner(System.in);
         TaxiPark taxiPark = new TaxiPark(park);
-        System.out.println(taxiPark);
         System.out.println("The cost of the entire fleet : " + taxiPark.costOfTheTaxiPark() + " $");
         System.out.println("Sort by fuel consumption  : " + taxiPark.sortByFuelConsumption());
         System.out.println("Enter the required speed intervals = ");

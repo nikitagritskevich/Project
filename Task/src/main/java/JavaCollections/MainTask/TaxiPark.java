@@ -11,11 +11,7 @@ public class TaxiPark {
     private List<? extends Car> park;
 
     public int costOfTheTaxiPark() {
-        int costOfPriceTaxiPark = 0;
-        for (Car car : park) {
-            costOfPriceTaxiPark += car.getPriceAuto();
-        }
-        return costOfPriceTaxiPark;
+        return park.stream().mapToInt(park-> park.getPriceAuto()).sum();
     }
 
     public TaxiPark sortByFuelConsumption() {
