@@ -22,29 +22,17 @@ public class Car {
     private final double price;
     private final int regNumber;
 
-    public int getId() {
-        return id;
-    }
 
-    public int getModelAuto() {
-        return modelAuto;
-    }
 
     public int getYearOfRelease() {
         return yearOfRelease;
     }
 
-    public String getColor() {
-        return color;
-    }
 
     public double getPrice() {
         return price;
     }
 
-    public int getRegNumber() {
-        return regNumber;
-    }
 
     public Car(int id, BrandAuto brandAuto, int modelAuto, int yearOfRelease, String color, double price, int regNumber) {
         this.id = id;

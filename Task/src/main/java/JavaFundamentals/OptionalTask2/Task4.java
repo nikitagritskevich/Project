@@ -1,9 +1,6 @@
 package JavaFundamentals.OptionalTask2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 
 //4.     Найти максимальный элемент в матрице и удалить из матрицы все строки и столбцы, его содержащие
 
@@ -35,8 +32,8 @@ public class Task4 {
         System.out.println();
         int maxNumber = array[0][0];
 
-        ArrayList<Integer> line = new ArrayList<>();
-        ArrayList<Integer> row = new ArrayList<>();
+        Set<Integer> line = new HashSet<Integer>() ;
+        Set<Integer> row = new HashSet<Integer>() ;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 if (array[i][j] > maxNumber) {
@@ -59,7 +56,7 @@ public class Task4 {
 
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                if (line.contains(i) == true || row.contains(j) == true) {
+                if (line.contains(i) || row.contains(j)) {
                     array[i][j] = 0;
                 }
             }

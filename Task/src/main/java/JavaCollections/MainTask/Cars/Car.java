@@ -5,11 +5,11 @@ import JavaCollections.MainTask.Classification.ModelAuto;
 
 abstract public class Car {
 
-    private int priceAuto; //price in dollars
-    private int averageSpeedAuto;//average speed in kilometers per hour
-    private ClassificationOfPassengerCars classificationOfPassengerCars;
-    private ModelAuto modelAuto;
-    private int fuelConsumer;
+    private final int priceAuto; //price in dollars
+    private final int averageSpeedAuto;//average speed in kilometers per hour
+    private final ClassificationOfPassengerCars classificationOfPassengerCars;
+    private final ModelAuto modelAuto;
+    private final int fuelConsumer;
 
     public int getPriceAuto() {
         return priceAuto;

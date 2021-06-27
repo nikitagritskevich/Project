@@ -8,25 +8,26 @@ public class Task1 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int length = in.nextInt();
         System.out.println("Enter n");
-        String string[] = new String[length];
+        int length = in.nextInt();
+        
+        String lineNumber[] = new String[length];
 
-        for (int i = 0; i < string.length; i++) {
-            string[i] = in.next();
+        for (int i = 0; i < lineNumber.length; i++) {
+            lineNumber[i] = in.next();
         }
-        String maxLengthStr = string[0];
-        String minLengthStr = string[0];
-        int minLength = string[0].length();
-        int maxLength = string[0].length();
-        for (int i = 0; i < string.length; i++) {
-            if (minLength < string[i].length()) {
-                minLength = string[i].length();
-                minLengthStr = string[i];
+        String maxLengthStr = lineNumber[0];
+        String minLengthStr = lineNumber[0];
+        int minLength = lineNumber[0].length();
+        int maxLength = lineNumber[0].length();
+        for (int i = 0; i < lineNumber.length; i++) {
+            if (minLength < lineNumber[i].length()) {
+                minLength = lineNumber[i].length();
+                minLengthStr = lineNumber[i];
             }
-            if (maxLength > string[i].length()) {
-                maxLength = string[i].length();
-                maxLengthStr = string[i];
+            if (maxLength > lineNumber[i].length()) {
+                maxLength = lineNumber[i].length();
+                maxLengthStr = lineNumber[i];
             }
 
         }

@@ -4,7 +4,7 @@ import JavaCollections.MainTask.Classification.ClassificationOfPassengerCars;
 import JavaCollections.MainTask.Classification.ModelAuto;
 
 public class SpeedAuto extends Car {
-    private int capacityOfPeopleInTheCar;
+    private final int capacityOfPeopleInTheCar;
 
     public SpeedAuto(int priceAuto, ClassificationOfPassengerCars classificationOfPassengerCars, ModelAuto modelAuto, int fuelConsumer, int capacityOfPeopleInTheCar) {
         super(priceAuto, calculateAverageSpeed(fuelConsumer, capacityOfPeopleInTheCar), classificationOfPassengerCars, modelAuto, fuelConsumer);

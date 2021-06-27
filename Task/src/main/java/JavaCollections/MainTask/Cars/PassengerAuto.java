@@ -4,7 +4,7 @@ import JavaCollections.MainTask.Classification.ClassificationOfPassengerCars;
 import JavaCollections.MainTask.Classification.ModelAuto;
 
 public class PassengerAuto extends Car{
-    private int capacityOfPeopleInTheCar;
+    private final int capacityOfPeopleInTheCar;
 
     public PassengerAuto(int priceAuto, int averageSpeedAuto, ClassificationOfPassengerCars classificationOfPassengerCars, ModelAuto modelAuto, int fuelConsumer, int capacityOfPeopleInTheCar) {
         super(priceAuto, averageSpeedAuto, classificationOfPassengerCars, modelAuto, fuelConsumer);

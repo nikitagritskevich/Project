@@ -23,7 +23,7 @@ class ClassAutoPark {
 
         autoPark.createPark();
 
-        autoPark.getCar().stream().forEach(System.out::println);
+        autoPark.getCar().forEach(System.out::println);
         System.out.println();
 
         System.out.println("Enter required model Auto :");

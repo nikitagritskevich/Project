@@ -14,10 +14,6 @@ public class AutoPark {
         return park;
     }
 
-    public void addCar(List<Car> park) {
-        this.park = park;
-    }
-
     public void addCar(Car car) {
         this.park.add(car);
     }

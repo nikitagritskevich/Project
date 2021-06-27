@@ -15,13 +15,7 @@ public class TaxiPark {
     }
 
     public TaxiPark sortByFuelConsumption() {
-        Collections.sort(park, new Comparator<Car>() {
-                    public int compare(Car o1, Car o2) {
-                        return o1.getFuelConsumer() - o2.getFuelConsumer();
-
-                    }
-                }
-        );
+        park.sort((Comparator<Car>) (o1, o2) -> o1.getFuelConsumer() - o2.getFuelConsumer());
         return this;
     }
 

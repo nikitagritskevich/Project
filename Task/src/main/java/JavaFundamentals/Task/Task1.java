@@ -9,7 +9,6 @@ public class Task1 {
         String name;
         if (in.hasNextInt() || in.hasNextDouble()) {
             System.out.println("Is not name");
-            in.hasNext();
         } else {
             name = in.next();
             System.out.println("Hello, " + name);
