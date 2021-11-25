@@ -1,9 +1,9 @@
-package CleanCode.Planes;
+package CleanCode.planes;
 
 import java.util.Objects;
 
 abstract public class Plane {
-    String model;
+    private  String model;
     private final int maxSpeed;
     private final int maxFlightDistance;
     private final int maxLoadCapacity;
@@ -23,7 +23,7 @@ abstract public class Plane {
         return maxSpeed;
     }
 
-    public int GetMaxFlightDistance() {
+    public int getMaxFlightDistance() {
         return maxFlightDistance;
     }
 
@@ -44,11 +44,9 @@ abstract public class Plane {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Plane plane)) return false;
-        return maxSpeed == plane.maxSpeed &&
-                maxFlightDistance == plane.maxFlightDistance &&
-                maxLoadCapacity == plane.maxLoadCapacity &&
-                Objects.equals(model, plane.model);
+        if (o == null || getClass() != o.getClass()) return false;
+        Plane plane = (Plane) o;
+        return maxSpeed == plane.maxSpeed && maxFlightDistance == plane.maxFlightDistance && maxLoadCapacity == plane.maxLoadCapacity && model.equals(plane.model);
     }
 
     @Override

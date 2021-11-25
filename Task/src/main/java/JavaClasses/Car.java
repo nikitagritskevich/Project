@@ -15,7 +15,7 @@ c) список автомобилей заданного года выпуск�
 public class Car {
 
     private final int id;
-    private final BrandAuto brandAuto;
+    private final Brand brand;
     private final int modelAuto;
     private final int yearOfRelease;
     private final String color;
@@ -34,9 +34,9 @@ public class Car {
     }
 
 
-    public Car(int id, BrandAuto brandAuto, int modelAuto, int yearOfRelease, String color, double price, int regNumber) {
+    public Car(int id, Brand brand, int modelAuto, int yearOfRelease, String color, double price, int regNumber) {
         this.id = id;
-        this.brandAuto = brandAuto;
+        this.brand = brand;
         this.modelAuto = modelAuto;
         this.yearOfRelease = yearOfRelease;
         this.color = color;
@@ -48,7 +48,7 @@ public class Car {
     public String toString() {
         return "Car{" +
                 "id=" + id +
-                ", brandAuto=" + brandAuto +
+                ", brandAuto=" + brand +
                 ", modelAuto=" + modelAuto +
                 ", yearOfRelease=" + yearOfRelease +
                 ", color='" + color + '\'' +
@@ -57,7 +57,7 @@ public class Car {
                 '}';
     }
 
-    public BrandAuto getBrandAuto() {
-        return brandAuto;
+    public Brand getBrandAuto() {
+        return brand;
     }
 }

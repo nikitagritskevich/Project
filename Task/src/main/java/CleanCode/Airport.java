@@ -1,10 +1,10 @@
 package CleanCode;
 
-import CleanCode.Planes.experimentalPlane;
+import CleanCode.planes.ExperimentalPlane;
 import CleanCode.models.MilitaryType;
-import CleanCode.Planes.MilitaryPlane;
-import CleanCode.Planes.PassengerPlane;
-import CleanCode.Planes.Plane;
+import CleanCode.planes.MilitaryPlane;
+import CleanCode.planes.PassengerPlane;
+import CleanCode.planes.Plane;
 
 import java.util.*;
 
@@ -63,20 +63,20 @@ public class Airport {
 
     }
 
-    public List<experimentalPlane> getExperimentalPlanes() {
-        List<experimentalPlane> experimentalPlanes = new ArrayList<>();
+    public List<ExperimentalPlane> getExperimentalPlanes() {
+        List<ExperimentalPlane> ExperimentalPlanes = new ArrayList<>();
         for (Plane plane : planes) {
-            if (plane instanceof experimentalPlane) {
-                experimentalPlanes.add((experimentalPlane) plane);
+            if (plane instanceof ExperimentalPlane) {
+                ExperimentalPlanes.add((ExperimentalPlane) plane);
             }
         }
-        return experimentalPlanes;
+        return ExperimentalPlanes;
     }
 
     public Airport sortByMaxDistance() {
         Collections.sort(planes, new Comparator<Plane>() {
                     public int compare(Plane o1, Plane o2) {
-                        return o1.GetMaxFlightDistance() - o2.GetMaxFlightDistance();
+                        return o1.getMaxFlightDistance() - o2.getMaxFlightDistance();
 
                     }
                 }

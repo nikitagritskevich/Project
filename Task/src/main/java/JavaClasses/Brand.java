@@ -1,5 +1,5 @@
 package JavaClasses;
 
-enum BrandAuto {
+enum Brand {
     AUDI, BMW, FORD, BUGATTI
 }

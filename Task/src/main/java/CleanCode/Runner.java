@@ -1,9 +1,9 @@
 package CleanCode;
 
 import CleanCode.models.MilitaryType;
-import CleanCode.Planes.MilitaryPlane;
-import CleanCode.Planes.PassengerPlane;
-import CleanCode.Planes.Plane;
+import CleanCode.planes.MilitaryPlane;
+import CleanCode.planes.PassengerPlane;
+import CleanCode.planes.Plane;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,14 +1,14 @@
-package JavaCollections.MainTask.Cars;
+package JavaCollections.MainTask.cars;
 
-import JavaCollections.MainTask.Classification.ClassificationOfPassengerCars;
-import JavaCollections.MainTask.Classification.ModelAuto;
+import JavaCollections.MainTask.classification.Classification;
+import JavaCollections.MainTask.classification.Model;
 
 public class FreightСar extends Car {
     private final int capacityOfPeopleInTheCar;
     private final int loadCapacity; // in tons
 
-    public FreightСar(int priceAuto, int averageSpeedAuto, ClassificationOfPassengerCars classificationOfPassengerCars, ModelAuto modelAuto, int fuelConsumer, int capacityOfPeopleInTheCar, int loadCapacity) {
-        super(priceAuto, averageSpeedAuto, classificationOfPassengerCars, modelAuto, fuelConsumer);
+    public FreightСar(int priceAuto, int averageSpeedAuto, Classification classification, Model model, int fuelConsumer, int capacityOfPeopleInTheCar, int loadCapacity) {
+        super(priceAuto, averageSpeedAuto, classification, model, fuelConsumer);
         this.capacityOfPeopleInTheCar = capacityOfPeopleInTheCar;
         this.loadCapacity = loadCapacity;
     }

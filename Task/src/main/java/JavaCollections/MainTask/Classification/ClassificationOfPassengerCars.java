@@ -1,6 +1,0 @@
-package JavaCollections.MainTask.Classification;
-
-public enum ClassificationOfPassengerCars {
-    CLASSIFICATION_OF_PASSENGER_CARS_A, CLASSIFICATION_OF_PASSENGER_CARS_B, CLASSIFICATION_OF_PASSENGER_CARS_C,
-    CLASSIFICATION_OF_PASSENGER_CARS_D
-}

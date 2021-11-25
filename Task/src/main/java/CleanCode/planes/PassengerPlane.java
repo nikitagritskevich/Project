@@ -1,4 +1,4 @@
-package CleanCode.Planes;
+package CleanCode.planes;
 
 import java.util.Objects;
 

@@ -32,8 +32,8 @@ class ClassAutoPark {
         int requiredYear = in.nextInt();
 
 
-        BrandAuto brandAuto = BrandAuto.valueOf(model.toUpperCase(Locale.ROOT).trim());
-        autoPark.findCar(brandAuto, requiredYear);
+        Brand brand = Brand.valueOf(model.toUpperCase(Locale.ROOT).trim());
+        autoPark.findCar(brand, requiredYear);
 
         System.out.println("Enter required  year of Release : ");
         int yearOfRelease = in.nextInt();
@@ -41,7 +41,7 @@ class ClassAutoPark {
         double price = in.nextDouble();
 
         autoPark.findYearOfRelease(yearOfRelease, price);
-
+        in.close();
 
     }
 }
