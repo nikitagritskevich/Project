@@ -46,6 +46,5 @@ public class Runner {
             System.out.println("Search for Cars with the required speed : \n" + taxiPark.searchForCarsWithTheRequiredSpeed(firstInterval, lastInterval));
         }
 
-
     }
 }
