@@ -1,36 +1,28 @@
 package JavaException.University;
 
-import java.util.Objects;
-import java.util.Set;
+import java.util.List;
 
 public class Group {
-    private final int numberGroup;
-    private int numberCourse;
-    private final Set<Student> students;
+    private final int groupNumber;
+    private final List<Student> students;
 
-    public Group(int numberGroup, int numberCourse, Set<Student> students) {
-        this.numberGroup = numberGroup;
-        this.numberCourse = numberCourse;
+    public Group(int numberCourse,int numberGroup, List<Student> students) {
+        this.groupNumber = numberCourse * 10 + numberGroup;
         this.students = students;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Group group = (Group) o;
-        return numberGroup == group.numberGroup && numberCourse == group.numberCourse && students.equals(group.students);
+    public List<Student> getStudents() {
+        return students;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(numberGroup, numberCourse, students);
+    public int getGroupNumber() {
+        return groupNumber;
     }
 
     @Override
     public String toString() {
         return "Group{" +
-                numberCourse + numberGroup + " groups" +
+                "groupNumber=" + groupNumber +
                 ", students=" + students +
                 '}';
     }
