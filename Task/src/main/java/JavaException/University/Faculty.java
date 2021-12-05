@@ -1,5 +1,6 @@
 package JavaException.University;
 
+import JavaException.Exception.EmptyGroupInFacultyException;
 import JavaException.NameFaculty;
 
 import java.util.List;
@@ -10,7 +11,10 @@ public class Faculty  {
     private final NameFaculty name;
     private final List<Group> groups;
 
-    public Faculty(NameFaculty name, List<Group> groups) {
+    public Faculty(NameFaculty name, List<Group> groups) throws EmptyGroupInFacultyException {
+        if(groups.isEmpty()){
+            throw new EmptyGroupInFacultyException();
+        }
         this.name = name;
         this.groups = groups;
     }

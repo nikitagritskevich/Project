@@ -1,5 +1,6 @@
 package JavaException;
 
+import JavaException.Exception.*;
 import JavaException.University.Faculty;
 import JavaException.University.Group;
 import JavaException.University.Student;
@@ -10,9 +11,10 @@ import java.util.*;
 public class Runner {
 
     public static void main(String[] args) {
-        University university = fillInUniversity();
-        System.out.println(university);
+
         try (Scanner in = new Scanner(System.in)) {
+            University university = fillInUniversity();
+            System.out.println(university);
             System.out.println("Input number id Student Card :");
             int numberStudentCard = in.nextInt();
             System.out.println("sum score required Student is := " + university.sumAllStudentScore(numberStudentCard));
@@ -33,18 +35,34 @@ public class Runner {
                     + " by subject : " + requireSubject);
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
+        } catch (InCorrectSubjectScoreException e) {
+            e.printStackTrace();
+        } catch (NoSuchStudentForSubjectException e) {
+            e.printStackTrace();
+        } catch (EmptyStudentInGroupException e) {
+            e.printStackTrace();
+        } catch (EmptyGroupInFacultyException e) {
+            e.printStackTrace();
+        }catch (EmptyFacultyInUniversityException e){
+            e.printStackTrace();
         }
 
     }
 
 
-    private static University fillInUniversity() {
+    private static University fillInUniversity() throws InCorrectSubjectScoreException,
+            NoSuchStudentForSubjectException,
+            EmptyStudentInGroupException,
+            EmptyGroupInFacultyException,
+            EmptyFacultyInUniversityException {
+
+
         List<Student> students = new ArrayList<>();
 
         List<Group> groupsBiologyFaculty = new ArrayList<>();
         List<Group> groupsMathFaculty = new ArrayList<>();
         List<Faculty> faculties = new ArrayList<>();
-        Map<Subject, Integer> subject = Map.of(Subject.ENGLISH, 3, Subject.HIGH_MATH, 10);
+        Map<Subject, Integer> subject = Map.of(Subject.ENGLISH, 5, Subject.HIGH_MATH, 10);
         students.add(new Student("Valentin", "Sergeevich", "Burikov", 1231, subject));
         subject = Map.of(Subject.ENGLISH, 3, Subject.HIGH_MATH, 7);
 
@@ -55,6 +73,7 @@ public class Runner {
         students.add(new Student("Jack", "Burikov", "Vladislavovich", 1234, subject));
         groupsMathFaculty.add(new Group(2, 1, students));
         students = new ArrayList<>();
+
 
         subject = Map.of(Subject.BIOLOGY, 3, Subject.ECOLOGY, 10, Subject.HISTORY, 4);
         students.add(new Student("Ira", "Sergeevna", "Sifons", 1254121, subject));
