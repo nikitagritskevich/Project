@@ -1,10 +1,10 @@
 package JavaException;
 
-import JavaException.Exception.*;
-import JavaException.University.Faculty;
-import JavaException.University.Group;
-import JavaException.University.Student;
-import JavaException.University.University;
+import JavaException.exception.*;
+import JavaException.university.Faculty;
+import JavaException.university.Group;
+import JavaException.university.Student;
+import JavaException.university.University;
 
 import java.util.*;
 
@@ -17,7 +17,7 @@ public class Runner {
             System.out.println(university);
             System.out.println("Input number id Student Card :");
             int numberStudentCard = in.nextInt();
-            System.out.println("sum score required Student is := " + university.sumAllStudentScore(numberStudentCard));
+            System.out.println("sum score required Student is := " + university.averageScoreAllStudent(numberStudentCard));
             System.out.println("Input name Faculty :");
             NameFaculty requireFaculty = NameFaculty.valueOf(in.next().toUpperCase());
             System.out.println("Input number Group :");
@@ -35,26 +35,26 @@ public class Runner {
                     + " by subject : " + requireSubject);
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
-        } catch (InCorrectSubjectScoreException e) {
+        } catch (IncorrectSubjectScoreException e) {
             e.printStackTrace();
-        } catch (NoSuchStudentForSubjectException e) {
+        } catch (EmptyStudentSubjectException e) {
             e.printStackTrace();
-        } catch (EmptyStudentInGroupException e) {
+        } catch (EmptyStudentGroupException e) {
             e.printStackTrace();
-        } catch (EmptyGroupInFacultyException e) {
+        } catch (EmptyGroupUniversityException e) {
             e.printStackTrace();
-        }catch (EmptyFacultyInUniversityException e){
+        }catch (EmptyFacultyUniversityException e){
             e.printStackTrace();
         }
 
     }
 
 
-    private static University fillInUniversity() throws InCorrectSubjectScoreException,
-            NoSuchStudentForSubjectException,
-            EmptyStudentInGroupException,
-            EmptyGroupInFacultyException,
-            EmptyFacultyInUniversityException {
+    private static University fillInUniversity() throws IncorrectSubjectScoreException,
+            EmptyStudentSubjectException,
+            EmptyStudentGroupException,
+            EmptyGroupUniversityException,
+            EmptyFacultyUniversityException {
 
 
         List<Student> students = new ArrayList<>();
