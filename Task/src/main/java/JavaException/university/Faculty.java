@@ -1,19 +1,17 @@
-package JavaException.University;
+package JavaException.university;
 
-import JavaException.Exception.EmptyGroupInFacultyException;
+import JavaException.exception.EmptyGroupUniversityException;
 import JavaException.NameFaculty;
 
 import java.util.List;
-import java.util.Objects;
-import java.util.Set;
 
 public class Faculty  {
     private final NameFaculty name;
     private final List<Group> groups;
 
-    public Faculty(NameFaculty name, List<Group> groups) throws EmptyGroupInFacultyException {
+    public Faculty(NameFaculty name, List<Group> groups) throws EmptyGroupUniversityException {
         if(groups.isEmpty()){
-            throw new EmptyGroupInFacultyException();
+            throw new EmptyGroupUniversityException();
         }
         this.name = name;
         this.groups = groups;

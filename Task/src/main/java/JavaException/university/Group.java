@@ -1,6 +1,6 @@
-package JavaException.University;
+package JavaException.university;
 
-import JavaException.Exception.EmptyStudentInGroupException;
+import JavaException.exception.EmptyStudentGroupException;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ public class Group {
     private final int groupNumber;
     private final List<Student> students;
 
-    public Group(int numberCourse,int numberGroup, List<Student> students) throws EmptyStudentInGroupException{
+    public Group(int numberCourse,int numberGroup, List<Student> students) throws EmptyStudentGroupException {
         if(students.isEmpty()){
-            throw new EmptyStudentInGroupException();
+            throw new EmptyStudentGroupException();
         }
         this.groupNumber = numberCourse * 10 + numberGroup;
         this.students = students;

@@ -1,7 +1,7 @@
-package JavaException.University;
+package JavaException.university;
 
-import JavaException.Exception.InCorrectSubjectScoreException;
-import JavaException.Exception.NoSuchStudentForSubjectException;
+import JavaException.exception.IncorrectSubjectScoreException;
+import JavaException.exception.EmptyStudentSubjectException;
 import JavaException.Subject;
 
 
@@ -15,12 +15,12 @@ public class Student {
     private final int idCard;
     private final Map<Subject, Integer> subjects;
 
-    public Student(String name, String lastName, String surName, int idCard, Map<Subject, Integer> subjects) throws InCorrectSubjectScoreException, NoSuchStudentForSubjectException {
+    public Student(String name, String lastName, String surName, int idCard, Map<Subject, Integer> subjects) throws IncorrectSubjectScoreException, EmptyStudentSubjectException {
         if (subjects.isEmpty()) {
-            throw new NoSuchStudentForSubjectException();
+            throw new EmptyStudentSubjectException();
         }
-        if (!subjects.entrySet().stream().allMatch(s -> s.getValue() > 0 || s.getValue() < 10)) {
-            throw new InCorrectSubjectScoreException();
+        if (subjects.entrySet().stream().anyMatch(s -> s.getValue() < 0 || s.getValue() > 10)) {
+            throw new IncorrectSubjectScoreException();
         }
         this.name = name;
         this.lastName = lastName;
