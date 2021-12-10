@@ -34,13 +34,19 @@ public class University {
     }
 
     public double averageScoreAllStudent(int numberStudentCard) {
-        Stream<Student> stream = this.getFaculties().stream().map(Faculty::getGroups)
+        this.getFaculties().stream().map(Faculty::getGroups)
                 .flatMap(Collection::stream).map(Group::getStudents)
-                .flatMap(Collection::stream).filter(s -> s.getIdCard() == numberStudentCard);
-        stream.findFirst().orElseThrow(() -> new IllegalArgumentException());
-        Stream<Map.Entry<Subject, Integer>> entryStream = stream.map(Student::getSubjects).map(s -> s.entrySet()).flatMap(Collection::stream);
-        int sum = entryStream.mapToInt(s -> s.getValue()).sum();
-        double countSubject = entryStream.count();
+                .flatMap(Collection::stream).filter(s -> s.getIdCard() == numberStudentCard)
+                .findFirst().orElseThrow(() -> new IllegalArgumentException());
+
+        int sum = this.getFaculties().stream().map(Faculty::getGroups)
+                .flatMap(Collection::stream).map(Group::getStudents)
+                .flatMap(Collection::stream).filter(s -> s.getIdCard() == numberStudentCard)
+                .map(Student::getSubjects).map(s -> s.entrySet()).flatMap(Collection::stream).mapToInt(s -> s.getValue()).sum();
+
+        double countSubject = this.getFaculties().stream().map(Faculty::getGroups)
+                .flatMap(Collection::stream).map(Group::getStudents)
+                .flatMap(Collection::stream).filter(s -> s.getIdCard() == numberStudentCard).count();
         if (countSubject > 0) {
             return sum / countSubject;
         } else {
@@ -53,11 +59,10 @@ public class University {
                 .findFirst().orElseThrow(() -> new IllegalArgumentException());
         Group requireGroup = requireFaculty.getGroups().stream().filter(group -> group.getGroupNumber() == numberGroup)
                 .findFirst().orElseThrow(() -> new IllegalArgumentException());
-
-        Stream<Map.Entry<Subject, Integer>> stream = requireGroup.getStudents().stream().map(Student::getSubjects).map(subject -> subject.entrySet())
-                .flatMap(Collection::stream).filter(s -> s.getKey().equals(requireSubject));
-        int sum = stream.mapToInt(s -> s.getValue()).sum();
-        double countSubject = stream.count();
+        int sum = requireGroup.getStudents().stream().map(Student::getSubjects).map(subject -> subject.entrySet())
+                .flatMap(Collection::stream).filter(s -> s.getKey().equals(requireSubject)).mapToInt(s -> s.getValue()).sum();
+        double countSubject = requireGroup.getStudents().stream().map(Student::getSubjects).map(subject -> subject.entrySet())
+                .flatMap(Collection::stream).filter(s -> s.getKey().equals(requireSubject)).count();
         if (countSubject > 0) {
             return sum / countSubject;
         } else {
@@ -66,12 +71,17 @@ public class University {
     }
 
     public double averageScoreInRequiredSubjectInAllUniversity(Subject requiredSubject) {
-        Stream<Map.Entry<Subject, Integer>> stream = this.getFaculties().stream().map(Faculty::getGroups).flatMap(Collection::stream).map(Group::getStudents)
+        this.getFaculties().stream().map(Faculty::getGroups).flatMap(Collection::stream).map(Group::getStudents)
                 .flatMap(Collection::stream).map(Student::getSubjects).map(subject -> subject.entrySet())
-                .flatMap(Collection::stream).filter(entrySubject -> entrySubject.getKey() == requiredSubject);
-        stream.findFirst().orElseThrow(() -> new IllegalArgumentException());
-        double countSubject = stream.count();
-        int sum = stream.mapToInt(entrySubject -> entrySubject.getValue()).sum();
+                .flatMap(Collection::stream).filter(entrySubject -> entrySubject.getKey() == requiredSubject)
+                .findFirst().orElseThrow(() -> new IllegalArgumentException());
+        double countSubject = this.getFaculties().stream().map(Faculty::getGroups).flatMap(Collection::stream).map(Group::getStudents)
+                .flatMap(Collection::stream).map(Student::getSubjects).map(subject -> subject.entrySet())
+                .flatMap(Collection::stream).filter(entrySubject -> entrySubject.getKey() == requiredSubject).count();
+        int sum = this.getFaculties().stream().map(Faculty::getGroups).flatMap(Collection::stream).map(Group::getStudents)
+                .flatMap(Collection::stream).map(Student::getSubjects).map(subject -> subject.entrySet())
+                .flatMap(Collection::stream).filter(entrySubject -> entrySubject.getKey() == requiredSubject)
+                .mapToInt(entrySubject -> entrySubject.getValue()).sum();
         if (countSubject > 0) {
             return sum / countSubject;
         } else {
