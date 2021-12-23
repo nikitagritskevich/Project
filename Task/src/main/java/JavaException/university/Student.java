@@ -5,6 +5,7 @@ import JavaException.exception.EmptyStudentSubjectException;
 import JavaException.Subject;
 
 
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -34,7 +35,7 @@ public class Student {
     }
 
     public Map<Subject, Integer> getSubjects() {
-        return subjects;
+        return new HashMap<>(subjects);
     }
 
     @Override

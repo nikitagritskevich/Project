@@ -3,14 +3,15 @@ package JavaException.university;
 import JavaException.exception.EmptyGroupUniversityException;
 import JavaException.NameFaculty;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Faculty  {
+public class Faculty {
     private final NameFaculty name;
     private final List<Group> groups;
 
     public Faculty(NameFaculty name, List<Group> groups) throws EmptyGroupUniversityException {
-        if(groups.isEmpty()){
+        if (groups.isEmpty()) {
             throw new EmptyGroupUniversityException();
         }
         this.name = name;
@@ -18,7 +19,7 @@ public class Faculty  {
     }
 
     public List<Group> getGroups() {
-        return groups;
+        return new ArrayList<>(groups);
     }
 
     public NameFaculty getName() {

@@ -2,6 +2,7 @@ package JavaException.university;
 
 import JavaException.exception.EmptyStudentGroupException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Group {
@@ -17,7 +18,7 @@ public class Group {
     }
 
     public List<Student> getStudents() {
-        return students;
+        return new ArrayList<>(students);
     }
 
     public int getGroupNumber() {

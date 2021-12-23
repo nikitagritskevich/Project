@@ -9,7 +9,6 @@ import JavaException.university.University;
 import java.util.*;
 
 public class Runner {
-
     public static void main(String[] args) {
 
         try (Scanner in = new Scanner(System.in)) {
@@ -43,7 +42,7 @@ public class Runner {
             e.printStackTrace();
         } catch (EmptyGroupUniversityException e) {
             e.printStackTrace();
-        }catch (EmptyFacultyUniversityException e){
+        } catch (EmptyFacultyUniversityException e) {
             e.printStackTrace();
         }
 
