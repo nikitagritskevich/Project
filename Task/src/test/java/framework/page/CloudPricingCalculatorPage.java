@@ -1,4 +1,4 @@
-package webDriver.iCanWin.page;
+package framework.page;
 
 import java.time.Duration;
 import org.openqa.selenium.By;
@@ -9,7 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import webDriver.hardcore.page.PageGenerateRandomEmail;
 
 public class CloudPricingCalculatorPage {
 
@@ -102,9 +101,11 @@ public class CloudPricingCalculatorPage {
     return this;
   }
 
-  public CloudPricingCalculatorPage selectCommittedUsages(String committedUsagesType) {
+  public CloudPricingCalculatorPage selectCommittedUsages() {
     committedUsagesListBox.click();
-    wait.until(ExpectedConditions.elementToBeClickable(By.xpath(committedUsagesType))).click();
+    wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+            "//md-option[ancestor::div[@class='md-select-menu-container'] and @ng-value='1']")))
+        .click();
     return this;
   }
 
@@ -118,12 +119,4 @@ public class CloudPricingCalculatorPage {
     wait.until(ExpectedConditions.elementToBeClickable(estimatePriceButton)).click();
     return this;
   }
-
-  public PageGenerateRandomEmail sendToEmail() {
-    wait.until(ExpectedConditions.elementToBeClickable(emailEstimateButton)).click();
-    wait.until(ExpectedConditions.visibilityOf(emailTextFiled)).sendKeys(Keys.CONTROL + "v");
-    sendEmailButton.click();
-    return new PageGenerateRandomEmail(driver);
-  }
-
 }

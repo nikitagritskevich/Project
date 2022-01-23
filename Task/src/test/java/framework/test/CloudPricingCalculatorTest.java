@@ -1,31 +1,18 @@
-package webDriver.hardcore.test;
+package framework.test;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import framework.page.GoogleCloudPage;
+import framework.page.MultiPageWithEmailAndPricingCloud;
+import framework.page.PageGenerateRandomEmail;
+
+import framework.utils.GoogleCloudUtils;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import webDriver.hardcore.page.PageGenerateRandomEmail;
-import webDriver.iCanWin.page.GoogleCloudPage;
-import webDriver.iCanWin.page.MultiPageWithEmailAndPricingCloud;
-import webDriver.iCanWin.page.RetestWithIncorrectSearch;
 
-public class CloudPricingCalculatorTest {
+public class CloudPricingCalculatorTest extends CommonCondition {
 
-  private WebDriver driver;
-
-  @BeforeClass(description = "Opened Browser and made his  maximum size")
-  private void initBrowser() {
-    driver = new ChromeDriver();
-    driver.manage().window().maximize();
-  }
-
-  @Test(retryAnalyzer = RetestWithIncorrectSearch.class, description =
-      "Generating email and send to email result calculate cloud pricing."
-          + "And checking on correct sent price in email and in google page")
+  @Test(description = "Generating email and send to email result calculate cloud pricing and checked corrected price.")
   public void calculateCloudPricingAndSendPriceOnEmailOrNot() {
-    openPageCloudPricingAndFillInAllFiled();
+    GoogleCloudUtils.fillingAllFieldsInPage(driver);
     new PageGenerateRandomEmail(driver).openNewTab().generateRandomEmail().sendToEmail()
         .moveToTabWithEmail();
     new MultiPageWithEmailAndPricingCloud(driver);
@@ -36,24 +23,6 @@ public class CloudPricingCalculatorTest {
     Assert.assertEquals(valuePriceFromEmail, valuePriceFromCloudPricing, "The price is mismatch");
   }
 
-  private void openPageCloudPricingAndFillInAllFiled() {
-    new GoogleCloudPage(driver)
-        .openPage()
-        .searchResult()
-        .visitPagePricingCalculator()
-        .sendNumberOfInstances("4")
-        .enterSeriesNumber("//md-option[@value='n1']")
-        .enterMachineType("n1-standard-8")
-        .addGPUs("GPU type", "Number of GPUs", "1")
-        .selectLocalSSD("select_option_439")
-        .selectCommittedUsages("//md-option[ancestor::div[@class='md-select-menu-container'] and @ng-value='1']")
-        .selectDataCenterLocation("select_option_236")
-        .estimatePriceForPricing();
-  }
 
 
-  @AfterClass(description = "Close Browser")
-  private void closeBrowser() {
-    driver.quit();
-  }
 }
