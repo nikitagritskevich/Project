@@ -6,7 +6,7 @@ package JavaCollections.MainTask;
 
 
 import JavaCollections.MainTask.cars.Car;
-import JavaCollections.MainTask.cars.FreightСar;
+import JavaCollections.MainTask.cars.FreightCar;
 import JavaCollections.MainTask.cars.PassengerAuto;
 import JavaCollections.MainTask.cars.SpeedAuto;
 import JavaCollections.MainTask.classification.Classification;
@@ -22,9 +22,9 @@ public class Runner {
             new PassengerAuto(3215, 79, Classification.B, Model.AUDI, 54, 3),
             new PassengerAuto(1300, 15, Classification.B, Model.LADA, 75, 2),
             new PassengerAuto(7540, 95, Classification.C, Model.BMW, 45, 2),
-            new FreightСar(25000, 35, Classification.D, Model.LADA, 120, 5, 300),
-            new FreightСar(45000, 45, Classification.D, Model.LADA, 135, 4, 500),
-            new FreightСar(90000, 20, Classification.D, Model.LADA, 150, 7, 1200),
+            new FreightCar(25000, 35, Classification.D, Model.LADA, 120, 5, 300),
+            new FreightCar(45000, 45, Classification.D, Model.LADA, 135, 4, 500),
+            new FreightCar(90000, 20, Classification.D, Model.LADA, 150, 7, 1200),
             new SpeedAuto(120000, Classification.A, Model.BMW, 72, 5),
             new SpeedAuto(150301, Classification.B, Model.AUDI, 90, 2),
             new SpeedAuto(210999, Classification.B, Model.BMW, 130, 2),
