@@ -15,7 +15,7 @@ public class GoogleCloudService {
         .addGPUs("GPU type", "Number of GPUs", pricingData.getNumberGPUs())
         .selectLocalSSD(pricingData.getLocalSSDValue())
         .selectCommittedUsages(pricingData.getCommittedUsages())
-        .selectDataCenterLocation(pricingData.getCommittedUsages())
+        .selectDataCenterLocation(pricingData.getValueDatacenterLocation())
         .estimatePriceForPricing();
   }
 
