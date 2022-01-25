@@ -9,7 +9,7 @@ import CleanCode.planes.Plane;
 import java.util.*;
 
 public class Airport {
-    private List<? extends Plane> planes;
+    private final List<? extends Plane> planes;
 
     public List<PassengerPlane> getPassengerPlane() {
         List<? extends Plane> planes = this.planes;

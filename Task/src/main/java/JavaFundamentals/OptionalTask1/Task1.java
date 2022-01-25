@@ -11,7 +11,7 @@ public class Task1 {
         System.out.println("Enter n");
         int length = in.nextInt();
         
-        String lineNumber[] = new String[length];
+        String[] lineNumber = new String[length];
 
         for (int i = 0; i < lineNumber.length; i++) {
             lineNumber[i] = in.next();

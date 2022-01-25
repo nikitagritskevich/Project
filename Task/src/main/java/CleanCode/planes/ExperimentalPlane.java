@@ -5,8 +5,8 @@ import CleanCode.models.ExperimentalTypes;
 
 public class ExperimentalPlane extends Plane {
 
-    private ExperimentalTypes type;
-    private ClassificationLevel classificationLevel;
+    private final ExperimentalTypes type;
+    private final ClassificationLevel classificationLevel;
 
     public ExperimentalPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, ExperimentalTypes type, ClassificationLevel classificationLevel) {
         super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);

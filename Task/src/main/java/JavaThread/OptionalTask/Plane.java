@@ -5,8 +5,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Plane extends Thread {
 
-  private Airport airport;
-  private int planeNumber;
+  private final Airport airport;
+  private final int planeNumber;
 
   public Plane(Airport airport, int planeNumber) {
     this.airport = airport;

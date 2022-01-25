@@ -9,7 +9,7 @@ public class Task5 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int length = in.nextInt();
-        int array[] = new int[length];
+        int[] array = new int[length];
         ArrayList<Integer> evenNumbers = new ArrayList<>();
         ArrayList<Integer> oddNumbers = new ArrayList<>();
         int evenNumber = 0;
@@ -22,7 +22,7 @@ public class Task5 {
             int lengthNewArray;
             int temp = array[i];
             lengthNewArray = (int) Math.log10(temp) + 1;
-            int Numbers[] = new int[lengthNewArray];
+            int[] Numbers = new int[lengthNewArray];
             int current = array[i];
             for (int j = 0; j < Numbers.length; j++) {
                 Numbers[j] = current % 10;

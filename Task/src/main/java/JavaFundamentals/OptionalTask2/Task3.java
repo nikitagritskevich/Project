@@ -10,7 +10,7 @@ public class Task3 {
         int length = in.nextInt();
         System.out.println("enter the interval M");
         int M = in.nextInt();
-        int array[][] = new int[length][length];
+        int[][] array = new int[length][length];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
                 array[i][j] = (int) (-M + (Math.random()) * M);

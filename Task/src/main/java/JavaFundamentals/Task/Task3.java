@@ -9,7 +9,7 @@ public class Task3 {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter quantity numbers");
         int numbers = in.nextInt();
-        int arrayNumbers[] = new int[numbers];
+        int[] arrayNumbers = new int[numbers];
         for (int i = 0; i < arrayNumbers.length; i++) {
             arrayNumbers[i] = (int) (1 + (Math.random()) * 45);
         }
