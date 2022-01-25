@@ -12,8 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GoogleCloudPage {
 
-  private WebDriver driver;
-  private WebDriverWait wait;
+  private final WebDriver driver;
+  private final WebDriverWait wait;
 
   @FindBy(xpath = "//div[@class='devsite-search-container']")
   private WebElement searchButton;

@@ -11,8 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CloudPricingCalculatorPage {
 
-  private WebDriver driver;
-  private WebDriverWait wait;
+  private final WebDriver driver;
+  private final WebDriverWait wait;
 
   @FindBy(xpath = "//*[@ng-model='listingCtrl.computeServer.quantity']")
   private WebElement numberOfInstancesTextField;

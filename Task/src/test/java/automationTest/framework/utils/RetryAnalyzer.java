@@ -1,4 +1,4 @@
-package automationTest.framework.retryAnalyzer;
+package automationTest.framework.utils;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
@@ -6,7 +6,7 @@ import org.testng.ITestResult;
 public class RetryAnalyzer implements IRetryAnalyzer {
 
   private int count = 0;
-  private int maxCount = 3;
+  private final int maxCount = 3;
   private final String exceptionRetry = "//a[parent::div[@class='gs-title'] and ./b[text() = 'Google Cloud Pricing Calculator']]";
 
   @Override

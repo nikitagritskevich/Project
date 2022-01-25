@@ -15,17 +15,17 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 public class TestListener implements ITestListener {
-
-  private Logger logger = LogManager.getRootLogger();
+//логировать в методах
+private final Logger logger = LogManager.getRootLogger();
 
   @Override
   public void onTestStart(ITestResult iTestResult) {
-
+logger.info("Test start");
   }
 
   @Override
   public void onTestSuccess(ITestResult iTestResult) {
-
+    logger.info("Test success");
   }
 
   @Override
@@ -35,6 +35,7 @@ public class TestListener implements ITestListener {
 
   @Override
   public void onTestSkipped(ITestResult iTestResult) {
+    saveScreenshot();
   }
 
   @Override
@@ -43,15 +44,13 @@ public class TestListener implements ITestListener {
 
   @Override
   public void onStart(ITestContext iTestContext) {
-
+    logger.info("Test start");
   }
 
   @Override
   public void onFinish(ITestContext iTestContext) {
-
+    logger.info("Test finish");
   }
-
-
   private void saveScreenshot() {
     File screenshotCapture = ((TakesScreenshot) (DriverManager.getDriver())).getScreenshotAs(
         OutputType.FILE);
@@ -62,7 +61,6 @@ public class TestListener implements ITestListener {
       logger.error("Error save screenshot ");
     }
   }
-
   public String getCurrentTimeAsString() {
     DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy_MM_dd-HH_mm_ss");
     return ZonedDateTime.now().format(format);

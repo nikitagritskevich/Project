@@ -14,11 +14,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GoogleCloudPage {
 
-  private WebDriver driver;
-  private WebDriverWait wait;
-  private Logger logger = LogManager.getRootLogger();
+  private final WebDriver driver;
+  private final WebDriverWait wait;
+  private final Logger logger = LogManager.getRootLogger();
   private final String HTML_URL = "https://cloud.google.com/";
-
+  private final long TIME_OUT = 10;
   @FindBy(xpath = "//div[@class='devsite-search-container']")
   private WebElement searchButton;
 
@@ -27,13 +27,13 @@ public class GoogleCloudPage {
 
   public GoogleCloudPage(WebDriver driver) {
     this.driver = driver;
-    wait = new WebDriverWait(driver, 10);
+    wait = new WebDriverWait(driver, TIME_OUT);
     PageFactory.initElements(driver, this);
   }
 
   public GoogleCloudPage openPage() {
     driver.get(HTML_URL);
-    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(TIME_OUT, TimeUnit.SECONDS);
     logger.info(String.format("The page %s open",HTML_URL));
     return this;
   }
@@ -46,10 +46,9 @@ public class GoogleCloudPage {
     return this;
   }
 
-  public CloudPricingCalculatorPage visitPagePricingCalculator() {
-    By.xpath("//*[parent::md-input-container and ./md-checkbox[@tabindex='0']]");
+  public CloudPricingCalculatorPage visitPagePricingCalculator(String linkName) {
     wait.until(ExpectedConditions.visibilityOfElementLocated(
-        By.xpath("//a[parent::div[@class='gs-title'] and ./b[text() = 'Google Cloud Pricing Calculator']]"))).click();
+        By.xpath(String.format("//a[parent::div[@class='gs-title'] and ./b[text() = '%s']]",linkName)))).click();
     logger.info("Visit page google cloud pricing calculator");
     return new CloudPricingCalculatorPage(driver);
   }

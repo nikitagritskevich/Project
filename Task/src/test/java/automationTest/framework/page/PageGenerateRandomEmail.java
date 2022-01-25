@@ -16,10 +16,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PageGenerateRandomEmail {
 
-  private WebDriver driver;
+  private final WebDriver driver;
   private List<String> availableTabs;
-  private Logger logger = LogManager.getRootLogger();
+  private final Logger logger = LogManager.getRootLogger();
   private final String HTML_URL = "https://yopmail.com/";
+  private final long TIME_OUT = 10;
   @FindBy(xpath = "//a[parent::div[@id='listeliens'] and @href='email-generator']")
   private WebElement generateRandomEmailButton;
 
@@ -41,9 +42,9 @@ public class PageGenerateRandomEmail {
   }
 
   public CloudPricingCalculatorPage generateRandomEmail() {
-    new WebDriverWait(driver, 10).until(
+    new WebDriverWait(driver, TIME_OUT).until(
         ExpectedConditions.elementToBeClickable(generateRandomEmailButton)).click();
-    new WebDriverWait(driver, 10).until(
+    new WebDriverWait(driver, TIME_OUT).until(
         ExpectedConditions.elementToBeClickable(driver.findElement(By.id("cprnd")))).click();
     logger.info("Generate random email,save name email in clipboard and switch to google cloud page");
     driver.switchTo().window(availableTabs.get(0));
@@ -52,7 +53,7 @@ public class PageGenerateRandomEmail {
   public void moveToTabWithEmail() {
     List<String> availableTabs = new ArrayList<>(driver.getWindowHandles());
     driver.switchTo().window(availableTabs.get(1));
-    new WebDriverWait(driver, 10).until(
+    new WebDriverWait(driver, TIME_OUT).until(
             ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='egengo();']")))
         .click();
     for (int i = 0; i < 3 || !driver.findElement(By.id("nbmail")).getText().contains("1"); i++) {

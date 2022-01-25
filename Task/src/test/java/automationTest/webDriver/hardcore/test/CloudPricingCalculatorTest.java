@@ -2,8 +2,7 @@ package automationTest.webDriver.hardcore.test;
 
 import automationTest.framework.page.MultiPageWithEmailAndPricingCloud;
 import automationTest.framework.page.PageGenerateRandomEmail;
-import automationTest.framework.test.CommonCondition;
-import automationTest.framework.utils.GoogleCloudUtils;
+import automationTest.framework.service.GoogleCloudService;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -23,7 +22,7 @@ public class CloudPricingCalculatorTest  {
 
   @Test(description = "Generating email and send to email result calculate cloud pricing and checked corrected price.")
   public void calculateCloudPricingAndSendPriceOnEmailOrNot() {
-    GoogleCloudUtils.fillingAllFieldsInPage(driver);
+    GoogleCloudService.fillingFieldsForCalculatePricing(driver);
     new PageGenerateRandomEmail(driver).openNewTab().generateRandomEmail().sendToEmail()
         .moveToTabWithEmail();
     MultiPageWithEmailAndPricingCloud pageEmailAndPricingCloud = new MultiPageWithEmailAndPricingCloud(

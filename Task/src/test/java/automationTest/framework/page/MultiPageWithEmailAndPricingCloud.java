@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MultiPageWithEmailAndPricingCloud {
 
-  private WebDriver driver;
+  private final WebDriver driver;
 
   @FindBy(xpath = "//h3[parent::td[not(@colspan ='3')]]")
   private WebElement valuePriceEmail;

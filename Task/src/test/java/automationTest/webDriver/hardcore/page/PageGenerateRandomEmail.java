@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PageGenerateRandomEmail {
 
-  private WebDriver driver;
+  private final WebDriver driver;
   private List<String> availableTabs;
 
   @FindBy(xpath = "//a[@title='Случайный одноразовый адрес электронной почты']")

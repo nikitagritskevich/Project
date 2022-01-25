@@ -14,9 +14,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CloudPricingCalculatorPage {
 
-  private WebDriver driver;
-  private WebDriverWait wait;
-  private Logger logger = LogManager.getRootLogger();
+  private final WebDriver driver;
+  private final WebDriverWait wait;
+  private final Logger logger = LogManager.getRootLogger();
+  private final long TIME_OUT = 10;
 
   @FindBy(xpath = "//*[@ng-model='listingCtrl.computeServer.quantity']")
   private WebElement numberOfInstancesTextField;
@@ -60,8 +61,8 @@ public class CloudPricingCalculatorPage {
   public CloudPricingCalculatorPage(WebDriver driver) {
     this.driver = driver;
     PageFactory.initElements(driver, this);
-    wait = new WebDriverWait(driver, 10);
-    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    wait = new WebDriverWait(driver, TIME_OUT);
+    driver.manage().timeouts().implicitlyWait(TIME_OUT, TimeUnit.SECONDS);
     driver.switchTo().frame(devsiteIframe);
     driver.switchTo().frame(iframeElement);
   }
@@ -104,29 +105,34 @@ public class CloudPricingCalculatorPage {
     return this;
   }
 
-  public CloudPricingCalculatorPage selectLocalSSD() {
+  public CloudPricingCalculatorPage selectLocalSSD(String value) {
     localSSDListBox.click();
     wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-            "//md-option[ancestor::div[@class='md-select-menu-container md-active md-clickable'] and @value='2']")))
+            String.format(
+                "//md-option[ancestor::div[@class='md-select-menu-container md-active md-clickable'] and @value='%s']",
+                value))))
         .click();
     logger.info("select local SSD");
     return this;
   }
 
-  public CloudPricingCalculatorPage selectCommittedUsages() {
+  public CloudPricingCalculatorPage selectCommittedUsages(String value) {
     committedUsagesListBox.click();
     wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-            "//md-option[ancestor::div[@class='md-select-menu-container md-active md-clickable'] and @ng-value='1']")))
+            String.format(
+                "//md-option[ancestor::div[@class='md-select-menu-container md-active md-clickable'] and @ng-value='%s']",
+                value))))
         .click();
     logger.info("select committed usages");
     return this;
   }
 
-  public CloudPricingCalculatorPage selectDataCenterLocation() {
+  public CloudPricingCalculatorPage selectDataCenterLocation(String value) {
     dataCenterLocationComboBox.click();
     wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-            "//*[ancestor::div[@class='md-select-menu-container cpc-region-select md-active md-clickable'] "
-                + "and @value='europe-west3']")))
+            String.format(
+                "//*[ancestor::div[@class='md-select-menu-container cpc-region-select md-active md-clickable'] "
+                    + "and @value='%s']", value))))
         .click();
     logger.info("select data center location");
     return this;
