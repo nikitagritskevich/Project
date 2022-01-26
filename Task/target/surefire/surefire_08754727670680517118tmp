@@ -1,0 +1,8 @@
+#surefire_0
+#Wed Jan 26 11:16:56 MSK 2022
+surefire.suiteXmlFiles=src\\test\\resources\\testng-smoke.xml
+user.dir=D\:\\Project\\Task
+basedir=D\:\\Project\\Task
+environment=dev
+browser=chrome
+localRepository=C\:\\Users\\lenovo\\.m2\\repository
