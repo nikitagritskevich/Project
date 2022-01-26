@@ -91,15 +91,15 @@ public class CloudPricingCalculatorPage {
     return this;
   }
 
-  public CloudPricingCalculatorPage addGPUs(String GPUType, String numberOfGPUElement,
-      String numberOfGPU) {
+  public CloudPricingCalculatorPage addGPUs(String modelNVIDIACard, String numberOfGPU) {
     checkBoxAddGPU.click();
     wait.until(ExpectedConditions.visibilityOfElementLocated(
-        By.xpath(String.format("//md-select[@placeholder='%s']", GPUType)))).click();
-    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@value='NVIDIA_TESLA_V100']")))
+        By.xpath("//md-select[@placeholder='GPU type']"))).click();
+    wait.until(ExpectedConditions.elementToBeClickable(
+            (By.xpath(String.format("//*[@value='%s']", modelNVIDIACard)))))
         .click();
     driver.findElement(
-            By.xpath(String.format("//md-select[@placeholder='%s']", numberOfGPUElement)))
+            By.xpath("//md-select[@placeholder='Number of GPUs']"))
         .sendKeys(numberOfGPU);
     logger.info(String.format("Add %s GPUs with type NVIDIA_TESLA_V100", numberOfGPU));
     return this;

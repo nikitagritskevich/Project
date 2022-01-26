@@ -1,4 +1,6 @@
-package automationTest.framework.service;
+package automationTest.framework.model;
+
+import automationTest.framework.service.TestDataReader;
 
 public class PricingData {
 
@@ -9,6 +11,7 @@ public class PricingData {
   private final static String TEST_DATA_PRICING_DATA_VALUE_LOCAL_SSD = "testdata.pricingdata.valueLocalSSD";
   private final static String TEST_DATA_PRICING_DATA_VALUE_COMMITTED_USAGES = "testdata.pricingdata.valueCommittedUsages";
   private final static String TEST_DATA_PRICING_DATA_VALUE_DATACENTER_LOCATION = "testdata.pricingdata.valueDatacenterLocation";
+  private final static String TEST_DATA_PRICING_DATA_MODEL_NVIDIA_CARD = "testdata.pricingdata.modelNVIDIACard";
 
   public String getNumberInstance() {
     return TestDataReader.getTestData(TEST_DATA_PRICING_DATE_NUMBER_INSTANCE);
@@ -16,6 +19,10 @@ public class PricingData {
 
   public String getSeriesNumber() {
     return TestDataReader.getTestData(TEST_DATA_PRICING_DATE_SERIES_NUMBER);
+  }
+
+  public String getModelCard() {
+    return TestDataReader.getTestData(TEST_DATA_PRICING_DATA_MODEL_NVIDIA_CARD);
   }
 
   public String getMachineType() {

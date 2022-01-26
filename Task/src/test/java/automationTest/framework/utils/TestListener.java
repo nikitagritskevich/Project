@@ -15,7 +15,6 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 public class TestListener implements ITestListener {
-//логировать в методах
 private final Logger logger = LogManager.getRootLogger();
 
   @Override

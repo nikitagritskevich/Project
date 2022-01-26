@@ -1,5 +1,6 @@
 package automationTest.framework.service;
 
+import automationTest.framework.model.PricingData;
 import automationTest.framework.page.CloudPricingCalculatorPage;
 import automationTest.framework.page.GoogleCloudPage;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +13,7 @@ public class GoogleCloudService {
         .sendNumberOfInstances(pricingData.getNumberInstance())
         .enterSeriesNumber(pricingData.getSeriesNumber())
         .enterMachineType(pricingData.getMachineType())
-        .addGPUs("GPU type", "Number of GPUs", pricingData.getNumberGPUs())
+        .addGPUs(pricingData.getModelCard(), pricingData.getNumberGPUs())
         .selectLocalSSD(pricingData.getLocalSSDValue())
         .selectCommittedUsages(pricingData.getCommittedUsages())
         .selectDataCenterLocation(pricingData.getValueDatacenterLocation())
